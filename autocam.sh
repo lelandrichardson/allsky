@@ -1,1 +1,1 @@
-export CAMERA=ZWO
+export CAMERA=RPiHQ

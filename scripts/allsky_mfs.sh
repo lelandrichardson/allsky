@@ -38,7 +38,7 @@ ALLSKY_GROUP=${ALLSKY_GROUP:-allsky}
 # Configure image storage.
 IMAGE_DIR=${ALLSKY_RUN}/images
 # Comment out "IMAGE_DEV" if you aren't storing images on a separate device
-IMAGE_DEV=${IMAGE_DEV:-/dev/sda1}
+# IMAGE_DEV=${IMAGE_DEV:-/dev/sda1}
 
 # 8M should be big enough for anything. 4MB is plenty for 1280x960 monochrome.
 # Turn this down to save memory once you understand your usage patterns.

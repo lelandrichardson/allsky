@@ -1007,7 +1007,8 @@ int main(int argc, char *argv[])
 				printf("It's daytime... we're not saving images\n");
 
 				// Sleep for a while
-				usleep(daytimeDelay * 1000);
+				// TODO(lmr): This multiplication looked incorrect
+				usleep(daytimeDelay);
 			}
 
 			// Images should be captured during day-time
@@ -1087,7 +1088,8 @@ int main(int argc, char *argv[])
 				printf("Capturing & saving image done, now wait %d seconds...\n", useDelay / 1000);
 
 				// Sleep for a moment
-				usleep(useDelay * 1000);
+				// TODO(lmr): this multiplication looked incorrect
+				usleep(useDelay);
 
 				// Check for day or night based on location and angle
 				calculateDayOrNight(latitude, longitude, angle);

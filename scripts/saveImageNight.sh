@@ -41,7 +41,11 @@ if [[ $AUTO_STRETCH == "true" ]]; then
   	convert $IMAGE_TO_USE -sigmoidal-contrast "$AUTO_STRETCH_AMOUNT","$AUTO_STRETCH_MID_POINT" $IMAGE_TO_USE
 fi
 
-cp $IMAGE_TO_USE "liveview-$FILENAME.$EXTENSION"
+if [[ $LIVEVIEW_RESIZE == "true" ]]; then
+	convert "$IMAGE_TO_USE" -resize "$LIVEVIEW_WIDTH"x"$LIVEVIEW_HEIGHT" "liveview-$FILENAME.$EXTENSION"
+else
+	cp $IMAGE_TO_USE "liveview-$FILENAME.$EXTENSION"
+fi
 
 # Save image in images/current directory
 cp $IMAGE_TO_USE "images/$CURRENT/$FILENAME-$(date +'%Y%m%d%H%M%S').$EXTENSION"

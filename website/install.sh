@@ -9,7 +9,7 @@ echo -e "*************************************${NC}"
 echo -en '\n'
 
 echo -en "${GREEN}* Fetching website files\n${NC}"
-git clone https://github.com/thomasjacquin/allsky-website.git /var/www/html/allsky
+git clone https://github.com/lelandrichardson/allsky-website.git /var/www/html/allsky
 echo -en '\n'
 
 echo -en "${GREEN}* Create thumbnails directories\n${NC}"

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Choose between ZWO or RPiHQ or auto (prefers ZWO if present)
-CAMERA="auto"
+CAMERA="RPiHQ"
 
 # Set to true to upload current image to your website
 UPLOAD_IMG=false
@@ -23,7 +23,7 @@ TIMELAPSEHEIGHT=0
 FPS=25
 
 # Set to true to generate a keogram at the end of the night (image summary of the night)
-KEOGRAM=true
+KEOGRAM=false
 
 # Set to true to upload the keogram after it has been generated
 UPLOAD_KEOGRAM=false
@@ -41,7 +41,7 @@ UPLOAD_STARTRAILS=false
 AUTO_DELETE=true
 
 # Set this value to the number of archived nights you want to keep. Needs AUTO_DELETE=true to work
-NIGHTS_TO_KEEP=14
+NIGHTS_TO_KEEP=30
 
 # Set to true if you want to enable dark frame subtraction on your night time images
 DARK_FRAME_SUBTRACTION=false
@@ -56,6 +56,12 @@ CAPTURE_24HR=false
 IMG_RESIZE=false
 IMG_HEIGHT=1520
 IMG_WIDTH=2028
+
+# Use a different size image for the liveview image for the website. If you are using the Pi HQ camera, the
+# full image might be quite large (12MP) and take a while to download over an internet connection.
+LIVEVIEW_RESIZE=true
+LIVEVIEW_WIDTH=640
+LIVEVIEW_HEIGHT=480
 
 # Crop the captured image, used to improve the images when using a fisheye lens
 CROP_IMAGE=false

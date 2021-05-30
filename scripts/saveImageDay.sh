@@ -25,8 +25,11 @@ if [[ $CROP_IMAGE == "true" ]]; then
         convert "$IMAGE_TO_USE" -gravity Center -crop "$CROP_WIDTH"x"$CROP_HEIGHT"+"$CROP_OFFSET_X"+"$CROP_OFFSET_Y" +repage "$IMAGE_TO_USE";
 fi
 
-cp $IMAGE_TO_USE "liveview-$FILENAME.$EXTENSION"
-
+if [[ $LIVEVIEW_RESIZE == "true" ]]; then
+	convert "$IMAGE_TO_USE" -resize "$LIVEVIEW_WIDTH"x"$LIVEVIEW_HEIGHT" "liveview-$FILENAME.$EXTENSION"
+else
+	cp $IMAGE_TO_USE "liveview-$FILENAME.$EXTENSION"
+fi
 
 # If 24 hour saving is desired, save the current image in today's directory
 if [ "$CAPTURE_24HR" = true ] ; then
